@@ -1,0 +1,16 @@
+[
+{
+  "modid": "githubaccessmod",
+  "name": "GitHubAccessMod",
+  "description": "Mod that allows you to use GitHub in Minecraft.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["liach"],
+  "credits": "liachmodded, MIT Licensed",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

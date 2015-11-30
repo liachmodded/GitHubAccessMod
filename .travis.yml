@@ -1,0 +1,15 @@
+sudo: false
+language: java
+jdk:
+  - openjdk8
+  - oraclejdk8
+before_install: 
+  - chmod +x gradlew
+  - ./gradlew clean cleanCache
+install: ./gradlew setupCIWorkspace -S -i
+script: ./gradlew build -S -i
+notifications:
+  email: false
+env:
+  global:
+    TERM=dumb
