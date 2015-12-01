@@ -39,8 +39,7 @@ public class CommandGitHub extends CommandBase {
   }
 
   public void processCommand(ICommandSender sender, String[] args) {
-    GitHubClient ghClient = new GitHubClient();
-    ghClient.setCredentials(args[0], args[1]);
+    GitHubAccessMod.instance.ghClient.setCredentials(args[0], args[1]);
   }
 
   public String getCommandUsage(ICommandSender sender) {
