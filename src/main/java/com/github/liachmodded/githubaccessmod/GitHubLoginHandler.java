@@ -24,28 +24,22 @@
  */
 package com.github.liachmodded.githubaccessmod;
 
-import net.minecraft.command.CommandBase;
-import net.minecraft.command.ICommandSender;
-import org.eclipse.egit.github.core.client.GitHubClient;
+import javax.swing.JFrame;
 
 /**
- * Created by liach on 11/29/2015.
+ * Created by liach on 12/9/2015.
  *
  * @author liach
  */
-public class CommandGitHub extends CommandBase {
-  public String getCommandName() {
-    return "github";
+public final class GitHubLoginHandler {
+  private static GitHubLoginHandler instance;
+
+  private JFrame loginFrame;
+
+  private GitHubLoginHandler() {
   }
 
-  public void processCommand(ICommandSender sender, String[] args) {
-    if (args.length == 3 && "login".equalsIgnoreCase(args[0])) {
-      GitHubAccessMod.instance.getGitHub().setCredentials(args[1], args[2]);
-      GitHubAccessMod.instance.updateGitHub();
-    }
-  }
+  private void init() {
 
-  public String getCommandUsage(ICommandSender sender) {
-    return "";
   }
 }

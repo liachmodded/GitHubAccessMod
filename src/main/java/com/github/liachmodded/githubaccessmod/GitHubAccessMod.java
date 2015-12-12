@@ -24,7 +24,7 @@ public class GitHubAccessMod {
   @Mod.Instance
   public static GitHubAccessMod instance;
 
-  public static final String MOD_ID = "gitHubaccessmod";
+  public static final String MOD_ID = "githubaccessmod";
 
   public static final String NAME = "GitHubAccessMod";
 
@@ -34,7 +34,7 @@ public class GitHubAccessMod {
 
   public File configFile;
 
-  public GitHubClient ghClient = new GitHubClient();
+  private GitHubClient ghClient = new GitHubClient();
 
   @Mod.EventHandler
   public void onPreInit(FMLPreInitializationEvent event) {
@@ -46,6 +46,14 @@ public class GitHubAccessMod {
   @Mod.EventHandler
   public void onServerInit(FMLServerStartingEvent event) {
     event.registerServerCommand(new CommandGitHub());
+  }
+
+  public GitHubClient getGitHub() {
+    return ghClient;
+  }
+
+  public void updateGitHub() {
+
   }
 
   private void loadUserInfo() {

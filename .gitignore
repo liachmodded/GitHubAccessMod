@@ -11,6 +11,7 @@ push/
 run/
 src/ic2
 out/
+classes/
 
 /gradle.properties
 
@@ -26,3 +27,5 @@ README.txt
 *.iml
 *.ipr
 *.iws
+
+*.class

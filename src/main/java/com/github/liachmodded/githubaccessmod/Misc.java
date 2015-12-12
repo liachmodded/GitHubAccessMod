@@ -24,28 +24,26 @@
  */
 package com.github.liachmodded.githubaccessmod;
 
-import net.minecraft.command.CommandBase;
-import net.minecraft.command.ICommandSender;
-import org.eclipse.egit.github.core.client.GitHubClient;
+import net.minecraft.util.StatCollector;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * Created by liach on 11/29/2015.
+ * Created by liach on 12/10/2015.
  *
  * @author liach
  */
-public class CommandGitHub extends CommandBase {
-  public String getCommandName() {
-    return "github";
+public final class Misc {
+  private Misc() {
   }
 
-  public void processCommand(ICommandSender sender, String[] args) {
-    if (args.length == 3 && "login".equalsIgnoreCase(args[0])) {
-      GitHubAccessMod.instance.getGitHub().setCredentials(args[1], args[2]);
-      GitHubAccessMod.instance.updateGitHub();
-    }
+  @SideOnly(Side.CLIENT)
+  public static String t(String tag, String... args) {
+    return StatCollector.translateToLocalFormatted(tag, args);
   }
 
-  public String getCommandUsage(ICommandSender sender) {
-    return "";
+  @SideOnly(Side.CLIENT)
+  public static String t(String tag) {
+    return StatCollector.translateToLocal(tag);
   }
 }
